@@ -16,7 +16,7 @@ function upload(file) {
   var fd = new window.FormData();
   fd.append("video", file);
   statusElement.innerHTML = "Generating...";
-  window.fetch("/thisvid2/upload", {
+  window.fetch("/this_vid2webeditionrevived/upload", {
     method: "post",
     body: fd
   }).then(res => res.json()).then(json => {
@@ -48,7 +48,7 @@ function uploadExtVideo() {
   if (!url) return;
   if (!isValidURL(url)) return statusElement.innerHTML = "That isn't a valid URL!";
   statusElement.innerHTML = "Processing...";
-  window.fetch(`/thisvid2/uploadytdl?url=${url}`).then(res => {
+  window.fetch(`/this_vid2webeditionrevived/uploadytdl?url=${url}`).then(res => {
     return res.json();
   }).then(json => {
     if (json.error) return statusElement.innerHTML = `There was an error while generating the video: ${json.error}`;
